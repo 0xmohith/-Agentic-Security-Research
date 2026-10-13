@@ -1,0 +1,38 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+secrets/
+token.json
+credentials.json
+client_secret*.json
+*.pem
+*.key
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python cache and test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# macOS
+.DS_Store
+
+# Logs and generated experiment outputs
+logs/
+*.log
+
+# Local model files
+*.gguf
+*.safetensors
+*.bin
+
+# Editor files
+.vscode/
+.idea/
