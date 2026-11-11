@@ -5,6 +5,24 @@ from datetime import datetime, timezone
 
 DEFAULT_LOG_DIR = Path("logs/historical")
 
+def _to_jsonable(value):
+    """Recursively convert values into JSON-serializable data."""
+    if hasattr(value, "model_dump"):
+        return _to_jsonable(value.model_dump(mode="json"))
+
+    if hasattr(value, "dict") and callable(value.dict):
+        return _to_jsonable(value.dict())
+
+    if isinstance(value, dict):
+        return {
+            str(key): _to_jsonable(item)
+            for key, item in value.items()
+        }
+
+    if isinstance(value, (list, tuple)):
+        return [_to_jsonable(item) for item in value]
+
+    return value
 
 def log_directory_for_scenario(scenario_path=None, attack_type="none"):
     """Map a scenario source/type to its corresponding logs subdirectory."""
@@ -72,7 +90,13 @@ class ExperimentLogger:
         with open(path, "w", encoding="utf-8") as f:
 
             for record in self.records:
-                f.write(json.dumps(record, ensure_ascii=False) + "\n")
+               f.write(
+                json.dumps(
+                     _to_jsonable(record),
+                     ensure_ascii=False,
+                     allow_nan=False,
+                    ) + "\n"
+                )
 
         self.saved_path = path
         return path

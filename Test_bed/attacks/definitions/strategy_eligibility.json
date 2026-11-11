@@ -1,0 +1,12 @@
+{
+  "canonical_strategy_definitions": {
+    "T1": "strategies/T1_direct_instruction.json",
+    "T2": "strategies/T2_authority_and_privilege_framing.json",
+    "T3": "strategies/T3_contextual_camouflage.json",
+    "T4": "strategies/T4_task_and_workflow_framing.json",
+    "T5": "strategies/T5_signal_based_override.json",
+    "T6": "strategies/T6_instruction_fragmentation.json",
+    "T7": "strategies/T7_relay_aware_injection.json"
+  },
+  "fixture_eligibility": []
+}

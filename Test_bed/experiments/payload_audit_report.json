@@ -1,0 +1,500 @@
+{
+  "timestamp": "2026-11-03T10:39:23.417522+00:00",
+  "expected_file_count": 42,
+  "files_found": [
+    "attacks/definitions/payloads/G1/T1/G1__T1__A.json",
+    "attacks/definitions/payloads/G1/T1/G1__T1__B.json",
+    "attacks/definitions/payloads/G1/T2/G1__T2__A.json",
+    "attacks/definitions/payloads/G1/T2/G1__T2__B.json",
+    "attacks/definitions/payloads/G1/T3/G1__T3__A.json",
+    "attacks/definitions/payloads/G1/T3/G1__T3__B.json",
+    "attacks/definitions/payloads/G1/T4/G1__T4__A.json",
+    "attacks/definitions/payloads/G1/T4/G1__T4__B.json",
+    "attacks/definitions/payloads/G1/T5/G1__T5__A.json",
+    "attacks/definitions/payloads/G1/T5/G1__T5__B.json",
+    "attacks/definitions/payloads/G1/T6/G1__T6__A.json",
+    "attacks/definitions/payloads/G1/T6/G1__T6__B.json",
+    "attacks/definitions/payloads/G1/T7/G1__T7__A.json",
+    "attacks/definitions/payloads/G1/T7/G1__T7__B.json",
+    "attacks/definitions/payloads/G2/T1/G2__T1__A.json",
+    "attacks/definitions/payloads/G2/T1/G2__T1__B.json",
+    "attacks/definitions/payloads/G2/T2/G2__T2__A.json",
+    "attacks/definitions/payloads/G2/T2/G2__T2__B.json",
+    "attacks/definitions/payloads/G2/T3/G2__T3__A.json",
+    "attacks/definitions/payloads/G2/T3/G2__T3__B.json",
+    "attacks/definitions/payloads/G2/T4/G2__T4__A.json",
+    "attacks/definitions/payloads/G2/T4/G2__T4__B.json",
+    "attacks/definitions/payloads/G2/T5/G2__T5__A.json",
+    "attacks/definitions/payloads/G2/T5/G2__T5__B.json",
+    "attacks/definitions/payloads/G2/T6/G2__T6__A.json",
+    "attacks/definitions/payloads/G2/T6/G2__T6__B.json",
+    "attacks/definitions/payloads/G2/T7/G2__T7__A.json",
+    "attacks/definitions/payloads/G2/T7/G2__T7__B.json",
+    "attacks/definitions/payloads/G3/T1/G3__T1__A.json",
+    "attacks/definitions/payloads/G3/T1/G3__T1__B.json",
+    "attacks/definitions/payloads/G3/T2/G3__T2__A.json",
+    "attacks/definitions/payloads/G3/T2/G3__T2__B.json",
+    "attacks/definitions/payloads/G3/T3/G3__T3__A.json",
+    "attacks/definitions/payloads/G3/T3/G3__T3__B.json",
+    "attacks/definitions/payloads/G3/T4/G3__T4__A.json",
+    "attacks/definitions/payloads/G3/T4/G3__T4__B.json",
+    "attacks/definitions/payloads/G3/T5/G3__T5__A.json",
+    "attacks/definitions/payloads/G3/T5/G3__T5__B.json",
+    "attacks/definitions/payloads/G3/T6/G3__T6__A.json",
+    "attacks/definitions/payloads/G3/T6/G3__T6__B.json",
+    "attacks/definitions/payloads/G3/T7/G3__T7__A.json",
+    "attacks/definitions/payloads/G3/T7/G3__T7__B.json"
+  ],
+  "files_missing": [],
+  "unexpected_files": [],
+  "errors": [],
+  "warnings": [
+    {
+      "severity": "WARNING",
+      "code": "implicit_tool_evaluator_equivalence",
+      "file": "attacks/definitions/payloads/G1/T1/G1__T1__A.json / attacks/definitions/payloads/G1/T1/G1__T1__B.json",
+      "message": "Payload format has no explicit tool/evaluator fields; confirm both texts invoke the goal-defined tool and expected fields."
+    },
+    {
+      "severity": "WARNING",
+      "code": "implicit_tool_evaluator_equivalence",
+      "file": "attacks/definitions/payloads/G1/T2/G1__T2__A.json / attacks/definitions/payloads/G1/T2/G1__T2__B.json",
+      "message": "Payload format has no explicit tool/evaluator fields; confirm both texts invoke the goal-defined tool and expected fields."
+    },
+    {
+      "severity": "WARNING",
+      "code": "implicit_tool_evaluator_equivalence",
+      "file": "attacks/definitions/payloads/G1/T3/G1__T3__A.json / attacks/definitions/payloads/G1/T3/G1__T3__B.json",
+      "message": "Payload format has no explicit tool/evaluator fields; confirm both texts invoke the goal-defined tool and expected fields."
+    },
+    {
+      "severity": "WARNING",
+      "code": "implicit_tool_evaluator_equivalence",
+      "file": "attacks/definitions/payloads/G1/T4/G1__T4__A.json / attacks/definitions/payloads/G1/T4/G1__T4__B.json",
+      "message": "Payload format has no explicit tool/evaluator fields; confirm both texts invoke the goal-defined tool and expected fields."
+    },
+    {
+      "severity": "WARNING",
+      "code": "implicit_tool_evaluator_equivalence",
+      "file": "attacks/definitions/payloads/G1/T5/G1__T5__A.json / attacks/definitions/payloads/G1/T5/G1__T5__B.json",
+      "message": "Payload format has no explicit tool/evaluator fields; confirm both texts invoke the goal-defined tool and expected fields."
+    },
+    {
+      "severity": "WARNING",
+      "code": "implicit_tool_evaluator_equivalence",
+      "file": "attacks/definitions/payloads/G2/T1/G2__T1__A.json / attacks/definitions/payloads/G2/T1/G2__T1__B.json",
+      "message": "Payload format has no explicit tool/evaluator fields; confirm both texts invoke the goal-defined tool and expected fields."
+    },
+    {
+      "severity": "WARNING",
+      "code": "implicit_tool_evaluator_equivalence",
+      "file": "attacks/definitions/payloads/G2/T2/G2__T2__A.json / attacks/definitions/payloads/G2/T2/G2__T2__B.json",
+      "message": "Payload format has no explicit tool/evaluator fields; confirm both texts invoke the goal-defined tool and expected fields."
+    },
+    {
+      "severity": "WARNING",
+      "code": "implicit_tool_evaluator_equivalence",
+      "file": "attacks/definitions/payloads/G2/T3/G2__T3__A.json / attacks/definitions/payloads/G2/T3/G2__T3__B.json",
+      "message": "Payload format has no explicit tool/evaluator fields; confirm both texts invoke the goal-defined tool and expected fields."
+    },
+    {
+      "severity": "WARNING",
+      "code": "implicit_tool_evaluator_equivalence",
+      "file": "attacks/definitions/payloads/G2/T4/G2__T4__A.json / attacks/definitions/payloads/G2/T4/G2__T4__B.json",
+      "message": "Payload format has no explicit tool/evaluator fields; confirm both texts invoke the goal-defined tool and expected fields."
+    },
+    {
+      "severity": "WARNING",
+      "code": "implicit_tool_evaluator_equivalence",
+      "file": "attacks/definitions/payloads/G2/T5/G2__T5__A.json / attacks/definitions/payloads/G2/T5/G2__T5__B.json",
+      "message": "Payload format has no explicit tool/evaluator fields; confirm both texts invoke the goal-defined tool and expected fields."
+    },
+    {
+      "severity": "WARNING",
+      "code": "implicit_tool_evaluator_equivalence",
+      "file": "attacks/definitions/payloads/G3/T1/G3__T1__A.json / attacks/definitions/payloads/G3/T1/G3__T1__B.json",
+      "message": "Payload format has no explicit tool/evaluator fields; confirm both texts invoke the goal-defined tool and expected fields."
+    },
+    {
+      "severity": "WARNING",
+      "code": "implicit_tool_evaluator_equivalence",
+      "file": "attacks/definitions/payloads/G3/T2/G3__T2__A.json / attacks/definitions/payloads/G3/T2/G3__T2__B.json",
+      "message": "Payload format has no explicit tool/evaluator fields; confirm both texts invoke the goal-defined tool and expected fields."
+    },
+    {
+      "severity": "WARNING",
+      "code": "implicit_tool_evaluator_equivalence",
+      "file": "attacks/definitions/payloads/G3/T3/G3__T3__A.json / attacks/definitions/payloads/G3/T3/G3__T3__B.json",
+      "message": "Payload format has no explicit tool/evaluator fields; confirm both texts invoke the goal-defined tool and expected fields."
+    },
+    {
+      "severity": "WARNING",
+      "code": "implicit_tool_evaluator_equivalence",
+      "file": "attacks/definitions/payloads/G3/T4/G3__T4__A.json / attacks/definitions/payloads/G3/T4/G3__T4__B.json",
+      "message": "Payload format has no explicit tool/evaluator fields; confirm both texts invoke the goal-defined tool and expected fields."
+    },
+    {
+      "severity": "WARNING",
+      "code": "implicit_tool_evaluator_equivalence",
+      "file": "attacks/definitions/payloads/G3/T5/G3__T5__A.json / attacks/definitions/payloads/G3/T5/G3__T5__B.json",
+      "message": "Payload format has no explicit tool/evaluator fields; confirm both texts invoke the goal-defined tool and expected fields."
+    }
+  ],
+  "pairwise_findings": [
+    {
+      "pair": "G1/T1",
+      "files": [
+        "attacks/definitions/payloads/G1/T1/G1__T1__A.json",
+        "attacks/definitions/payloads/G1/T1/G1__T1__B.json"
+      ],
+      "status": "PASS",
+      "findings": [
+        "Goal-defined tool/evaluator contract is shared; payload files contain no explicit tool/evaluator fields, so prose-level equivalence needs manual review."
+      ]
+    },
+    {
+      "pair": "G1/T2",
+      "files": [
+        "attacks/definitions/payloads/G1/T2/G1__T2__A.json",
+        "attacks/definitions/payloads/G1/T2/G1__T2__B.json"
+      ],
+      "status": "PASS",
+      "findings": [
+        "Goal-defined tool/evaluator contract is shared; payload files contain no explicit tool/evaluator fields, so prose-level equivalence needs manual review."
+      ]
+    },
+    {
+      "pair": "G1/T3",
+      "files": [
+        "attacks/definitions/payloads/G1/T3/G1__T3__A.json",
+        "attacks/definitions/payloads/G1/T3/G1__T3__B.json"
+      ],
+      "status": "PASS",
+      "findings": [
+        "Goal-defined tool/evaluator contract is shared; payload files contain no explicit tool/evaluator fields, so prose-level equivalence needs manual review."
+      ]
+    },
+    {
+      "pair": "G1/T4",
+      "files": [
+        "attacks/definitions/payloads/G1/T4/G1__T4__A.json",
+        "attacks/definitions/payloads/G1/T4/G1__T4__B.json"
+      ],
+      "status": "PASS",
+      "findings": [
+        "Goal-defined tool/evaluator contract is shared; payload files contain no explicit tool/evaluator fields, so prose-level equivalence needs manual review."
+      ]
+    },
+    {
+      "pair": "G1/T5",
+      "files": [
+        "attacks/definitions/payloads/G1/T5/G1__T5__A.json",
+        "attacks/definitions/payloads/G1/T5/G1__T5__B.json"
+      ],
+      "status": "PASS",
+      "findings": [
+        "Goal-defined tool/evaluator contract is shared; payload files contain no explicit tool/evaluator fields, so prose-level equivalence needs manual review."
+      ]
+    },
+    {
+      "pair": "G1/T6",
+      "files": [
+        "attacks/definitions/payloads/G1/T6/G1__T6__A.json",
+        "attacks/definitions/payloads/G1/T6/G1__T6__B.json"
+      ],
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "pair": "G1/T7",
+      "files": [
+        "attacks/definitions/payloads/G1/T7/G1__T7__A.json",
+        "attacks/definitions/payloads/G1/T7/G1__T7__B.json"
+      ],
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "pair": "G2/T1",
+      "files": [
+        "attacks/definitions/payloads/G2/T1/G2__T1__A.json",
+        "attacks/definitions/payloads/G2/T1/G2__T1__B.json"
+      ],
+      "status": "PASS",
+      "findings": [
+        "Goal-defined tool/evaluator contract is shared; payload files contain no explicit tool/evaluator fields, so prose-level equivalence needs manual review."
+      ]
+    },
+    {
+      "pair": "G2/T2",
+      "files": [
+        "attacks/definitions/payloads/G2/T2/G2__T2__A.json",
+        "attacks/definitions/payloads/G2/T2/G2__T2__B.json"
+      ],
+      "status": "PASS",
+      "findings": [
+        "Goal-defined tool/evaluator contract is shared; payload files contain no explicit tool/evaluator fields, so prose-level equivalence needs manual review."
+      ]
+    },
+    {
+      "pair": "G2/T3",
+      "files": [
+        "attacks/definitions/payloads/G2/T3/G2__T3__A.json",
+        "attacks/definitions/payloads/G2/T3/G2__T3__B.json"
+      ],
+      "status": "PASS",
+      "findings": [
+        "Goal-defined tool/evaluator contract is shared; payload files contain no explicit tool/evaluator fields, so prose-level equivalence needs manual review."
+      ]
+    },
+    {
+      "pair": "G2/T4",
+      "files": [
+        "attacks/definitions/payloads/G2/T4/G2__T4__A.json",
+        "attacks/definitions/payloads/G2/T4/G2__T4__B.json"
+      ],
+      "status": "PASS",
+      "findings": [
+        "Goal-defined tool/evaluator contract is shared; payload files contain no explicit tool/evaluator fields, so prose-level equivalence needs manual review."
+      ]
+    },
+    {
+      "pair": "G2/T5",
+      "files": [
+        "attacks/definitions/payloads/G2/T5/G2__T5__A.json",
+        "attacks/definitions/payloads/G2/T5/G2__T5__B.json"
+      ],
+      "status": "PASS",
+      "findings": [
+        "Goal-defined tool/evaluator contract is shared; payload files contain no explicit tool/evaluator fields, so prose-level equivalence needs manual review."
+      ]
+    },
+    {
+      "pair": "G2/T6",
+      "files": [
+        "attacks/definitions/payloads/G2/T6/G2__T6__A.json",
+        "attacks/definitions/payloads/G2/T6/G2__T6__B.json"
+      ],
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "pair": "G2/T7",
+      "files": [
+        "attacks/definitions/payloads/G2/T7/G2__T7__A.json",
+        "attacks/definitions/payloads/G2/T7/G2__T7__B.json"
+      ],
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "pair": "G3/T1",
+      "files": [
+        "attacks/definitions/payloads/G3/T1/G3__T1__A.json",
+        "attacks/definitions/payloads/G3/T1/G3__T1__B.json"
+      ],
+      "status": "PASS",
+      "findings": [
+        "Goal-defined tool/evaluator contract is shared; payload files contain no explicit tool/evaluator fields, so prose-level equivalence needs manual review."
+      ]
+    },
+    {
+      "pair": "G3/T2",
+      "files": [
+        "attacks/definitions/payloads/G3/T2/G3__T2__A.json",
+        "attacks/definitions/payloads/G3/T2/G3__T2__B.json"
+      ],
+      "status": "PASS",
+      "findings": [
+        "Goal-defined tool/evaluator contract is shared; payload files contain no explicit tool/evaluator fields, so prose-level equivalence needs manual review."
+      ]
+    },
+    {
+      "pair": "G3/T3",
+      "files": [
+        "attacks/definitions/payloads/G3/T3/G3__T3__A.json",
+        "attacks/definitions/payloads/G3/T3/G3__T3__B.json"
+      ],
+      "status": "PASS",
+      "findings": [
+        "Goal-defined tool/evaluator contract is shared; payload files contain no explicit tool/evaluator fields, so prose-level equivalence needs manual review."
+      ]
+    },
+    {
+      "pair": "G3/T4",
+      "files": [
+        "attacks/definitions/payloads/G3/T4/G3__T4__A.json",
+        "attacks/definitions/payloads/G3/T4/G3__T4__B.json"
+      ],
+      "status": "PASS",
+      "findings": [
+        "Goal-defined tool/evaluator contract is shared; payload files contain no explicit tool/evaluator fields, so prose-level equivalence needs manual review."
+      ]
+    },
+    {
+      "pair": "G3/T5",
+      "files": [
+        "attacks/definitions/payloads/G3/T5/G3__T5__A.json",
+        "attacks/definitions/payloads/G3/T5/G3__T5__B.json"
+      ],
+      "status": "PASS",
+      "findings": [
+        "Goal-defined tool/evaluator contract is shared; payload files contain no explicit tool/evaluator fields, so prose-level equivalence needs manual review."
+      ]
+    },
+    {
+      "pair": "G3/T6",
+      "files": [
+        "attacks/definitions/payloads/G3/T6/G3__T6__A.json",
+        "attacks/definitions/payloads/G3/T6/G3__T6__B.json"
+      ],
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "pair": "G3/T7",
+      "files": [
+        "attacks/definitions/payloads/G3/T7/G3__T7__A.json",
+        "attacks/definitions/payloads/G3/T7/G3__T7__B.json"
+      ],
+      "status": "PASS",
+      "findings": []
+    }
+  ],
+  "cross_file_consistency": [
+    {
+      "severity": "PASS",
+      "check": "global version consistency",
+      "message": "Consistent across found payloads: ['1.0']"
+    },
+    {
+      "severity": "PASS",
+      "check": "global dataset_version consistency",
+      "message": "Consistent across found payloads: ['v1']"
+    },
+    {
+      "severity": "PASS",
+      "check": "payload inventory",
+      "message": "Found 42 expected files; 0 missing; 0 unexpected T1-T7 files."
+    },
+    {
+      "severity": "PASS",
+      "check": "global canary uniqueness",
+      "message": "42 unique canaries across 42 occurrences."
+    }
+  ],
+  "t6_pending": {
+    "expected_experimental_files": [],
+    "experimental_files_found": [
+      "attacks/definitions/payloads/G1/T6/G1__T6__A.json",
+      "attacks/definitions/payloads/G1/T6/G1__T6__B.json",
+      "attacks/definitions/payloads/G2/T6/G2__T6__A.json",
+      "attacks/definitions/payloads/G2/T6/G2__T6__B.json",
+      "attacks/definitions/payloads/G3/T6/G3__T6__A.json",
+      "attacks/definitions/payloads/G3/T6/G3__T6__B.json"
+    ],
+    "schema_fixture": "present and excluded from experimental payload count",
+    "classification": "PASS"
+  },
+  "t7_structural_fixtures": {
+    "expected_files": [
+      "attacks/definitions/payloads/G1/T7/G1__T7__A.json",
+      "attacks/definitions/payloads/G1/T7/G1__T7__B.json",
+      "attacks/definitions/payloads/G2/T7/G2__T7__A.json",
+      "attacks/definitions/payloads/G2/T7/G2__T7__B.json",
+      "attacks/definitions/payloads/G3/T7/G3__T7__A.json",
+      "attacks/definitions/payloads/G3/T7/G3__T7__B.json"
+    ],
+    "found_files": [
+      "attacks/definitions/payloads/G1/T7/G1__T7__A.json",
+      "attacks/definitions/payloads/G1/T7/G1__T7__B.json",
+      "attacks/definitions/payloads/G2/T7/G2__T7__A.json",
+      "attacks/definitions/payloads/G2/T7/G2__T7__B.json",
+      "attacks/definitions/payloads/G3/T7/G3__T7__A.json",
+      "attacks/definitions/payloads/G3/T7/G3__T7__B.json"
+    ],
+    "missing_files": [],
+    "classification": "harmless structural fixtures only; not operational attack payloads",
+    "pair_findings": [
+      {
+        "pair": "G1/T7",
+        "status": "PASS",
+        "classification": "harmless structural fixtures only; not operational attack payloads"
+      },
+      {
+        "pair": "G2/T7",
+        "status": "PASS",
+        "classification": "harmless structural fixtures only; not operational attack payloads"
+      },
+      {
+        "pair": "G3/T7",
+        "status": "PASS",
+        "classification": "harmless structural fixtures only; not operational attack payloads"
+      }
+    ],
+    "checks": [
+      {
+        "check": "t7_version",
+        "status": "PASS"
+      },
+      {
+        "check": "t7_dataset_version",
+        "status": "PASS"
+      },
+      {
+        "check": "t7_mechanism",
+        "status": "PASS"
+      },
+      {
+        "check": "t7_relay_aware",
+        "status": "PASS"
+      },
+      {
+        "check": "t7_payload_text",
+        "status": "PASS"
+      },
+      {
+        "check": "t7_canary",
+        "status": "PASS"
+      },
+      {
+        "check": "t7_relay_marker",
+        "status": "PASS"
+      },
+      {
+        "check": "t7_equivalence_review",
+        "status": "PASS"
+      },
+      {
+        "check": "t7_frozen",
+        "status": "PASS"
+      },
+      {
+        "check": "A/B canary uniqueness",
+        "status": "PASS"
+      },
+      {
+        "check": "A/B word-count difference within 20%",
+        "status": "PASS"
+      },
+      {
+        "check": "word_count matches payload_text.split()",
+        "status": "PASS"
+      },
+      {
+        "check": "identity fields",
+        "status": "PASS"
+      },
+      {
+        "check": "metadata.is_adaptive=false",
+        "status": "PASS"
+      },
+      {
+        "check": "metadata.generation_method=manual",
+        "status": "PASS"
+      }
+    ]
+  },
+  "final_verdict": "PASS — READY FOR MANUAL REVIEW",
+  "manual_review_note": "Automated checks do not replace manual equivalence review and do not declare the dataset frozen or experiment-ready."
+}

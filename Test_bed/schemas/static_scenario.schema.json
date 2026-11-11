@@ -1,0 +1,484 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "static_scenario.schema.json",
+  "title": "Static Experiment Scenario",
+  "description": "Schema for static scenarios and compatible historical scenarios.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/experimentalScenario"
+    },
+    {
+      "$ref": "#/$defs/transitionalScenario"
+    },
+    {
+      "$ref": "#/$defs/legacyScenario"
+    }
+  ],
+  "$defs": {
+    "objective": {
+      "type": "object",
+      "required": [
+        "goal_type",
+        "tool"
+      ],
+      "properties": {
+        "goal_type": {
+          "type": "string",
+          "enum": [
+            "email_exfiltration",
+            "phishing_link_delivery",
+            "calendar_manipulation"
+          ]
+        },
+        "tool": {
+          "type": "string",
+          "enum": [
+            "send_email",
+            "add_calendar_event"
+          ]
+        },
+        "recipient": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "expected_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": {
+          "type": "string"
+        },
+        "time": {
+          "type": "string"
+        },
+        "matching": {
+          "type": "object",
+          "properties": {
+            "recipient": {
+              "$ref": "#/$defs/matchingMethod"
+            },
+            "subject": {
+              "$ref": "#/$defs/matchingMethod"
+            },
+            "body": {
+              "$ref": "#/$defs/matchingMethod"
+            },
+            "expected_url": {
+              "$ref": "#/$defs/matchingMethod"
+            },
+            "title": {
+              "$ref": "#/$defs/matchingMethod"
+            },
+            "time": {
+              "$ref": "#/$defs/matchingMethod"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "matchingMethod": {
+      "type": "string",
+      "enum": [
+        "exact",
+        "contains",
+        "substring",
+        "normalized_datetime"
+      ]
+    },
+    "modelConfiguration": {
+      "type": "object",
+      "required": [
+        "agent1",
+        "agent2",
+        "agent3"
+      ],
+      "properties": {
+        "agent1": {
+          "type": "string",
+          "minLength": 1
+        },
+        "agent2": {
+          "type": "string",
+          "minLength": 1
+        },
+        "agent3": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "experimentConfig": {
+      "type": "object",
+      "required": [
+        "agent_model_configuration",
+        "agent3_mode",
+        "defense_enabled",
+        "temperature",
+        "random_seed",
+        "executor_mode"
+      ],
+      "properties": {
+        "agent_model_configuration": {
+          "$ref": "#/$defs/modelConfiguration"
+        },
+        "agent3_mode": {
+          "type": "string",
+          "enum": [
+            "strict",
+            "neutral"
+          ]
+        },
+        "defense_enabled": {
+          "type": "boolean"
+        },
+        "temperature": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "random_seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "top_p": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "top_k": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "num_predict": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "repeat_penalty": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "executor_mode": {
+          "const": "dry_run"
+        },
+        "scenario_version": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "experimentalScenario": {
+      "type": "object",
+      "required": [
+        "scenario_id",
+        "template_id",
+        "payload_id",
+        "variant",
+        "trial_id",
+        "attack_type",
+        "defense",
+        "components",
+        "user_request",
+        "untrusted_content",
+        "objective",
+        "experiment_config"
+      ],
+      "properties": {
+        "scenario_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "template_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "payload_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "A",
+            "B"
+          ]
+        },
+        "trial_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "attack_type": {
+          "const": "static_disguised"
+        },
+        "attack_indicator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "defense": {
+          "type": "string",
+          "enum": [
+            "none",
+            "task_alignment",
+            "proposed_defense"
+          ]
+        },
+        "components": {
+          "type": "object",
+          "required": [
+            "goal_id",
+            "strategy_id",
+            "carrier_id",
+            "payload_id",
+            "injection_position"
+          ],
+          "properties": {
+            "goal_id": {
+              "type": "string",
+              "enum": [
+                "G1",
+                "G2",
+                "G3"
+              ]
+            },
+            "strategy_id": {
+              "type": "string",
+              "enum": [
+                "T1",
+                "T2",
+                "T3",
+                "T4",
+                "T5",
+                "T6",
+                "T7"
+              ]
+            },
+            "carrier_id": {
+              "type": "string",
+              "pattern": "^C[1-9][0-9]*$"
+            },
+            "payload_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "injection_position": {
+              "type": "string",
+              "enum": [
+                "beginning",
+                "middle",
+                "end"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "user_request": {
+          "type": "string",
+          "minLength": 1
+        },
+        "untrusted_content": {
+          "type": "string",
+          "minLength": 1
+        },
+        "objective": {
+          "$ref": "#/$defs/objective"
+        },
+        "experiment_config": {
+          "$ref": "#/$defs/experimentConfig"
+        }
+      },
+      "additionalProperties": false
+    },
+    "transitionalScenario": {
+      "type": "object",
+      "required": [
+        "scenario_id",
+        "attack_type",
+        "defense",
+        "components",
+        "user_request",
+        "untrusted_content",
+        "objective",
+        "experiment_config"
+      ],
+      "properties": {
+        "scenario_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "attack_type": {
+          "const": "static_disguised"
+        },
+        "attack_indicator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "defense": {
+          "type": "string",
+          "enum": [
+            "none",
+            "task_alignment",
+            "proposed_defense"
+          ]
+        },
+        "components": {
+          "type": "object",
+          "required": [
+            "goal_id",
+            "strategy_id",
+            "carrier_id",
+            "payload_id",
+            "injection_position"
+          ],
+          "properties": {
+            "goal_id": {
+              "type": "string",
+              "enum": [
+                "G1",
+                "G2",
+                "G3"
+              ]
+            },
+            "strategy_id": {
+              "type": "string",
+              "enum": [
+                "T1",
+                "T2",
+                "T3",
+                "T4",
+                "T5",
+                "T6",
+                "T7"
+              ]
+            },
+            "carrier_id": {
+              "type": "string",
+              "pattern": "^C[1-9][0-9]*$"
+            },
+            "payload_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "injection_position": {
+              "type": "string",
+              "enum": [
+                "beginning",
+                "middle",
+                "end"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "user_request": {
+          "type": "string",
+          "minLength": 1
+        },
+        "untrusted_content": {
+          "type": "string",
+          "minLength": 1
+        },
+        "objective": {
+          "$ref": "#/$defs/objective"
+        },
+        "experiment_config": {
+          "type": "object",
+          "required": [
+            "executor_mode"
+          ],
+          "properties": {
+            "executor_mode": {
+              "const": "dry_run"
+            },
+            "scenario_version": {
+              "type": "string"
+            },
+            "random_seed": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "legacyScenario": {
+      "type": "object",
+      "required": [
+        "scenario_id",
+        "attack_type",
+        "defense",
+        "user_request",
+        "untrusted_content"
+      ],
+      "properties": {
+        "scenario_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "attack_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "defense": {
+          "type": "string"
+        },
+        "user_request": {
+          "type": "string",
+          "minLength": 1
+        },
+        "untrusted_content": {
+          "type": "string"
+        },
+        "attack_indicator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "objective": {
+          "type": "object"
+        }
+      },
+      "not": {
+        "anyOf": [
+          {
+            "required": [
+              "components"
+            ]
+          },
+          {
+            "required": [
+              "experiment_config"
+            ]
+          },
+          {
+            "required": [
+              "template_id"
+            ]
+          },
+          {
+            "required": [
+              "trial_id"
+            ]
+          }
+        ]
+      },
+      "additionalProperties": true
+    }
+  }
+}

@@ -25,6 +25,27 @@ tools = [
                 "required": ["city"]
             }
         }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "add_calendar_event",
+            "description": "Add an event to the calendar.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the calendar event."
+                    },
+                    "time": {
+                        "type": "string",
+                        "description": "The date and time of the calendar event."
+                    }
+                },
+                "required": ["title", "time"]
+            }
+        }
     }
 ]
 
@@ -33,7 +54,7 @@ response = client.chat.completions.create(
     messages=[
         {
             "role": "user",
-            "content": "What is the weather in Mysuru?"
+            "content": "Add a calendar event titled 'Project review' for 2026-10-19 at 10:00."
         }
     ],
     tools=tools,

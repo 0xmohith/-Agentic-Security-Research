@@ -1,4 +1,6 @@
+# ==========================================
 # Environment variables and secrets
+# ==========================================
 .env
 .env.*
 !.env.example
@@ -9,30 +11,87 @@ client_secret*.json
 *.pem
 *.key
 
-# Python virtual environments
+# ==========================================
+# Python environments
+# ==========================================
 .venv/
 venv/
 env/
 
+# ==========================================
 # Python cache and test artifacts
+# ==========================================
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
 .coverage
+.coverage.*
 htmlcov/
 
+# ==========================================
 # macOS
+# ==========================================
 .DS_Store
+.AppleDouble
+.LSOverride
 
-# Logs and generated experiment outputs
-logs/
-*.log
-
-# Local model files
-*.gguf
-*.safetensors
-*.bin
-
-# Editor files
+# ==========================================
+# IDE and editor files
+# ==========================================
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+
+# ==========================================
+# Temporary and backup files
+# ==========================================
+*.bak
+*.tmp
+*.temp
+*.orig
+*.rej
+
+# ==========================================
+# Generated reports and temporary exports
+# ==========================================
+all_payloads.txt
+
+# ==========================================
+# Logs and generated experiment outputs
+# ==========================================
+logs/
+results/
+*.log
+
+# ==========================================
+# Local models and large model artifacts
+# ==========================================
+ollama-models/
+models/
+*.gguf
+*.safetensors
+*.pt
+*.pth
+
+# ==========================================
+# Additional local configuration
+# ==========================================
+.envrc
+.python-version.local
+
+# ==========================================
+# Database and local runtime artifacts
+# ==========================================
+*.sqlite
+*.sqlite3
+*.db
+
+# ==========================================
+# Temporary editor and OS files
+# ==========================================
+*.swp
+*.swo
