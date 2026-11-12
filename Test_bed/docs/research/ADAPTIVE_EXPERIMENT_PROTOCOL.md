@@ -106,6 +106,33 @@ test input on every round and does not use outcomes to choose or revise the
 next input. Thus, the present mock controller tests orchestration and logging,
 not live adaptive search.
 
+### Previous-round feedback policy
+
+The intended adaptive evaluation design provides no previous-round feedback
+to the attacker on round 1. On each subsequent round, full feedback means
+providing the complete preceding `ADAPTIVE_ROUND` record's `stage_records`
+and `pipeline_metrics`, including all recorded stages, raw outputs,
+handoffs, policy decisions, and tool outcomes. Key stages include:
+
+- Agent 1 output (`S2`).
+- Agent 1-to-Agent 2 handoff (`B1`).
+- Agent 2 output (`S4`) and Agent 2-to-Agent 3 handoff (`B2`).
+- Agent 3 output and tool proposal (`S5`).
+- Security-policy decision and reason (`POLICY`).
+- Tool-execution outcome (`T1`) and Agent 3 final output (`S6`).
+- Strict success/failure outcome and technical-failure status.
+
+For reproducibility, each feedback record must be associated with its trial
+ID, configuration ID, and source round number, and the exact record provided
+to each subsequent round must be preserved. The 30-round per-trial maximum
+still applies. A technical failure terminates the affected trial; it is not
+treated as an ordinary attack failure.
+
+This is the intended experimental feedback policy, not current functionality.
+The existing mock controller continues to replay fixed input, and a
+full-feedback adaptive attacker is **not implemented**. Adaptive experiments
+cannot currently execute this policy.
+
 ## 8. Round budget
 
 The maximum budget is **30 rounds per trial**. The planned checkpoints are
@@ -305,8 +332,9 @@ Not implemented or not established:
 
 ### Unresolved methodological questions
 
-1. What live attacker/controller and feedback policy will be used, and what
-   information from prior rounds may it use?
+1. What live attacker/controller will implement the specified previous-round
+   feedback policy, and what response or input-revision policy will it use
+   when given that trace?
 2. What exact runtime inputs instantiate each goal–carrier–strategy
    configuration, and are inputs fixed or varied across trials and rounds?
 3. What model/provider versions, prompts, generation settings, and seed
