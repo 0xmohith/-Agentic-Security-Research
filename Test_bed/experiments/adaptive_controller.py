@@ -149,7 +149,7 @@ class AdaptiveController:
                 failure, metrics, stages = _pipeline_result_failure(pipeline_result)
             except Exception as exc:
                 pipeline_result = None
-                failure = f"pipeline_exception:{type(exc).__name__}"
+                failure = f"pipeline_exception:{type(exc).__name__}:{exc}"
                 metrics = None
                 stages = None
 

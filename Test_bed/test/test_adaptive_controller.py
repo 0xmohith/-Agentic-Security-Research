@@ -259,6 +259,39 @@ def test_invalid_or_incomplete_pipeline_result_is_a_technical_failure(
     assert result["stopping_reason"] == "technical_failure"
 
 
+def test_pipeline_exception_message_is_preserved_in_adaptive_jsonl(tmp_path):
+    configuration, objective = _configuration()
+    message = 'controlled "pipeline" failure\nwith detail'
+
+    def pipeline_runner(**kwargs):
+        raise RuntimeError(message)
+
+    result = AdaptiveController(
+        configuration,
+        objective,
+        pipeline_runner,
+        output_dir=tmp_path,
+    ).run_trial()
+
+    records = [
+        json.loads(line)
+        for line in Path(result["log_path"]).read_text(encoding="utf-8").splitlines()
+    ]
+    round_record = next(
+        record["data"] for record in records if record["stage"] == "ADAPTIVE_ROUND"
+    )
+    trial_record = next(
+        record["data"] for record in records if record["stage"] == "ADAPTIVE_TRIAL"
+    )
+
+    assert round_record["failure_reason"] == (
+        f"pipeline_exception:RuntimeError:{message}"
+    )
+    assert round_record["technical_failure"] is True
+    assert trial_record["technical_failure"] is True
+    assert trial_record["stopping_reason"] == "technical_failure"
+
+
 def test_pipeline_technical_failure_is_separate_from_success(tmp_path):
     configuration, objective = _configuration()
 
