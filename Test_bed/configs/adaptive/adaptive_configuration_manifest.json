@@ -1,0 +1,477 @@
+{
+  "manifest_version": "1.0",
+  "description": "Adaptive goal-carrier-strategy configuration coverage manifest. Contains configuration identities only; no payloads, trials, seeds, or executions.",
+  "configuration_count": 77,
+  "compatible_pair_count": 11,
+  "strategies_per_pair": 7,
+  "excluded_pairs": [
+    {
+      "goal_id": "G3",
+      "carrier_id": "C3"
+    }
+  ],
+  "configurations": [
+    {
+      "configuration_id": "G1-C1-T1",
+      "goal_id": "G1",
+      "carrier_id": "C1",
+      "strategy_id": "T1"
+    },
+    {
+      "configuration_id": "G1-C1-T2",
+      "goal_id": "G1",
+      "carrier_id": "C1",
+      "strategy_id": "T2"
+    },
+    {
+      "configuration_id": "G1-C1-T3",
+      "goal_id": "G1",
+      "carrier_id": "C1",
+      "strategy_id": "T3"
+    },
+    {
+      "configuration_id": "G1-C1-T4",
+      "goal_id": "G1",
+      "carrier_id": "C1",
+      "strategy_id": "T4"
+    },
+    {
+      "configuration_id": "G1-C1-T5",
+      "goal_id": "G1",
+      "carrier_id": "C1",
+      "strategy_id": "T5"
+    },
+    {
+      "configuration_id": "G1-C1-T6",
+      "goal_id": "G1",
+      "carrier_id": "C1",
+      "strategy_id": "T6"
+    },
+    {
+      "configuration_id": "G1-C1-T7",
+      "goal_id": "G1",
+      "carrier_id": "C1",
+      "strategy_id": "T7"
+    },
+    {
+      "configuration_id": "G2-C1-T1",
+      "goal_id": "G2",
+      "carrier_id": "C1",
+      "strategy_id": "T1"
+    },
+    {
+      "configuration_id": "G2-C1-T2",
+      "goal_id": "G2",
+      "carrier_id": "C1",
+      "strategy_id": "T2"
+    },
+    {
+      "configuration_id": "G2-C1-T3",
+      "goal_id": "G2",
+      "carrier_id": "C1",
+      "strategy_id": "T3"
+    },
+    {
+      "configuration_id": "G2-C1-T4",
+      "goal_id": "G2",
+      "carrier_id": "C1",
+      "strategy_id": "T4"
+    },
+    {
+      "configuration_id": "G2-C1-T5",
+      "goal_id": "G2",
+      "carrier_id": "C1",
+      "strategy_id": "T5"
+    },
+    {
+      "configuration_id": "G2-C1-T6",
+      "goal_id": "G2",
+      "carrier_id": "C1",
+      "strategy_id": "T6"
+    },
+    {
+      "configuration_id": "G2-C1-T7",
+      "goal_id": "G2",
+      "carrier_id": "C1",
+      "strategy_id": "T7"
+    },
+    {
+      "configuration_id": "G3-C1-T1",
+      "goal_id": "G3",
+      "carrier_id": "C1",
+      "strategy_id": "T1"
+    },
+    {
+      "configuration_id": "G3-C1-T2",
+      "goal_id": "G3",
+      "carrier_id": "C1",
+      "strategy_id": "T2"
+    },
+    {
+      "configuration_id": "G3-C1-T3",
+      "goal_id": "G3",
+      "carrier_id": "C1",
+      "strategy_id": "T3"
+    },
+    {
+      "configuration_id": "G3-C1-T4",
+      "goal_id": "G3",
+      "carrier_id": "C1",
+      "strategy_id": "T4"
+    },
+    {
+      "configuration_id": "G3-C1-T5",
+      "goal_id": "G3",
+      "carrier_id": "C1",
+      "strategy_id": "T5"
+    },
+    {
+      "configuration_id": "G3-C1-T6",
+      "goal_id": "G3",
+      "carrier_id": "C1",
+      "strategy_id": "T6"
+    },
+    {
+      "configuration_id": "G3-C1-T7",
+      "goal_id": "G3",
+      "carrier_id": "C1",
+      "strategy_id": "T7"
+    },
+    {
+      "configuration_id": "G1-C2-T1",
+      "goal_id": "G1",
+      "carrier_id": "C2",
+      "strategy_id": "T1"
+    },
+    {
+      "configuration_id": "G1-C2-T2",
+      "goal_id": "G1",
+      "carrier_id": "C2",
+      "strategy_id": "T2"
+    },
+    {
+      "configuration_id": "G1-C2-T3",
+      "goal_id": "G1",
+      "carrier_id": "C2",
+      "strategy_id": "T3"
+    },
+    {
+      "configuration_id": "G1-C2-T4",
+      "goal_id": "G1",
+      "carrier_id": "C2",
+      "strategy_id": "T4"
+    },
+    {
+      "configuration_id": "G1-C2-T5",
+      "goal_id": "G1",
+      "carrier_id": "C2",
+      "strategy_id": "T5"
+    },
+    {
+      "configuration_id": "G1-C2-T6",
+      "goal_id": "G1",
+      "carrier_id": "C2",
+      "strategy_id": "T6"
+    },
+    {
+      "configuration_id": "G1-C2-T7",
+      "goal_id": "G1",
+      "carrier_id": "C2",
+      "strategy_id": "T7"
+    },
+    {
+      "configuration_id": "G2-C2-T1",
+      "goal_id": "G2",
+      "carrier_id": "C2",
+      "strategy_id": "T1"
+    },
+    {
+      "configuration_id": "G2-C2-T2",
+      "goal_id": "G2",
+      "carrier_id": "C2",
+      "strategy_id": "T2"
+    },
+    {
+      "configuration_id": "G2-C2-T3",
+      "goal_id": "G2",
+      "carrier_id": "C2",
+      "strategy_id": "T3"
+    },
+    {
+      "configuration_id": "G2-C2-T4",
+      "goal_id": "G2",
+      "carrier_id": "C2",
+      "strategy_id": "T4"
+    },
+    {
+      "configuration_id": "G2-C2-T5",
+      "goal_id": "G2",
+      "carrier_id": "C2",
+      "strategy_id": "T5"
+    },
+    {
+      "configuration_id": "G2-C2-T6",
+      "goal_id": "G2",
+      "carrier_id": "C2",
+      "strategy_id": "T6"
+    },
+    {
+      "configuration_id": "G2-C2-T7",
+      "goal_id": "G2",
+      "carrier_id": "C2",
+      "strategy_id": "T7"
+    },
+    {
+      "configuration_id": "G3-C2-T1",
+      "goal_id": "G3",
+      "carrier_id": "C2",
+      "strategy_id": "T1"
+    },
+    {
+      "configuration_id": "G3-C2-T2",
+      "goal_id": "G3",
+      "carrier_id": "C2",
+      "strategy_id": "T2"
+    },
+    {
+      "configuration_id": "G3-C2-T3",
+      "goal_id": "G3",
+      "carrier_id": "C2",
+      "strategy_id": "T3"
+    },
+    {
+      "configuration_id": "G3-C2-T4",
+      "goal_id": "G3",
+      "carrier_id": "C2",
+      "strategy_id": "T4"
+    },
+    {
+      "configuration_id": "G3-C2-T5",
+      "goal_id": "G3",
+      "carrier_id": "C2",
+      "strategy_id": "T5"
+    },
+    {
+      "configuration_id": "G3-C2-T6",
+      "goal_id": "G3",
+      "carrier_id": "C2",
+      "strategy_id": "T6"
+    },
+    {
+      "configuration_id": "G3-C2-T7",
+      "goal_id": "G3",
+      "carrier_id": "C2",
+      "strategy_id": "T7"
+    },
+    {
+      "configuration_id": "G1-C3-T1",
+      "goal_id": "G1",
+      "carrier_id": "C3",
+      "strategy_id": "T1"
+    },
+    {
+      "configuration_id": "G1-C3-T2",
+      "goal_id": "G1",
+      "carrier_id": "C3",
+      "strategy_id": "T2"
+    },
+    {
+      "configuration_id": "G1-C3-T3",
+      "goal_id": "G1",
+      "carrier_id": "C3",
+      "strategy_id": "T3"
+    },
+    {
+      "configuration_id": "G1-C3-T4",
+      "goal_id": "G1",
+      "carrier_id": "C3",
+      "strategy_id": "T4"
+    },
+    {
+      "configuration_id": "G1-C3-T5",
+      "goal_id": "G1",
+      "carrier_id": "C3",
+      "strategy_id": "T5"
+    },
+    {
+      "configuration_id": "G1-C3-T6",
+      "goal_id": "G1",
+      "carrier_id": "C3",
+      "strategy_id": "T6"
+    },
+    {
+      "configuration_id": "G1-C3-T7",
+      "goal_id": "G1",
+      "carrier_id": "C3",
+      "strategy_id": "T7"
+    },
+    {
+      "configuration_id": "G2-C3-T1",
+      "goal_id": "G2",
+      "carrier_id": "C3",
+      "strategy_id": "T1"
+    },
+    {
+      "configuration_id": "G2-C3-T2",
+      "goal_id": "G2",
+      "carrier_id": "C3",
+      "strategy_id": "T2"
+    },
+    {
+      "configuration_id": "G2-C3-T3",
+      "goal_id": "G2",
+      "carrier_id": "C3",
+      "strategy_id": "T3"
+    },
+    {
+      "configuration_id": "G2-C3-T4",
+      "goal_id": "G2",
+      "carrier_id": "C3",
+      "strategy_id": "T4"
+    },
+    {
+      "configuration_id": "G2-C3-T5",
+      "goal_id": "G2",
+      "carrier_id": "C3",
+      "strategy_id": "T5"
+    },
+    {
+      "configuration_id": "G2-C3-T6",
+      "goal_id": "G2",
+      "carrier_id": "C3",
+      "strategy_id": "T6"
+    },
+    {
+      "configuration_id": "G2-C3-T7",
+      "goal_id": "G2",
+      "carrier_id": "C3",
+      "strategy_id": "T7"
+    },
+    {
+      "configuration_id": "G1-C4-T1",
+      "goal_id": "G1",
+      "carrier_id": "C4",
+      "strategy_id": "T1"
+    },
+    {
+      "configuration_id": "G1-C4-T2",
+      "goal_id": "G1",
+      "carrier_id": "C4",
+      "strategy_id": "T2"
+    },
+    {
+      "configuration_id": "G1-C4-T3",
+      "goal_id": "G1",
+      "carrier_id": "C4",
+      "strategy_id": "T3"
+    },
+    {
+      "configuration_id": "G1-C4-T4",
+      "goal_id": "G1",
+      "carrier_id": "C4",
+      "strategy_id": "T4"
+    },
+    {
+      "configuration_id": "G1-C4-T5",
+      "goal_id": "G1",
+      "carrier_id": "C4",
+      "strategy_id": "T5"
+    },
+    {
+      "configuration_id": "G1-C4-T6",
+      "goal_id": "G1",
+      "carrier_id": "C4",
+      "strategy_id": "T6"
+    },
+    {
+      "configuration_id": "G1-C4-T7",
+      "goal_id": "G1",
+      "carrier_id": "C4",
+      "strategy_id": "T7"
+    },
+    {
+      "configuration_id": "G2-C4-T1",
+      "goal_id": "G2",
+      "carrier_id": "C4",
+      "strategy_id": "T1"
+    },
+    {
+      "configuration_id": "G2-C4-T2",
+      "goal_id": "G2",
+      "carrier_id": "C4",
+      "strategy_id": "T2"
+    },
+    {
+      "configuration_id": "G2-C4-T3",
+      "goal_id": "G2",
+      "carrier_id": "C4",
+      "strategy_id": "T3"
+    },
+    {
+      "configuration_id": "G2-C4-T4",
+      "goal_id": "G2",
+      "carrier_id": "C4",
+      "strategy_id": "T4"
+    },
+    {
+      "configuration_id": "G2-C4-T5",
+      "goal_id": "G2",
+      "carrier_id": "C4",
+      "strategy_id": "T5"
+    },
+    {
+      "configuration_id": "G2-C4-T6",
+      "goal_id": "G2",
+      "carrier_id": "C4",
+      "strategy_id": "T6"
+    },
+    {
+      "configuration_id": "G2-C4-T7",
+      "goal_id": "G2",
+      "carrier_id": "C4",
+      "strategy_id": "T7"
+    },
+    {
+      "configuration_id": "G3-C4-T1",
+      "goal_id": "G3",
+      "carrier_id": "C4",
+      "strategy_id": "T1"
+    },
+    {
+      "configuration_id": "G3-C4-T2",
+      "goal_id": "G3",
+      "carrier_id": "C4",
+      "strategy_id": "T2"
+    },
+    {
+      "configuration_id": "G3-C4-T3",
+      "goal_id": "G3",
+      "carrier_id": "C4",
+      "strategy_id": "T3"
+    },
+    {
+      "configuration_id": "G3-C4-T4",
+      "goal_id": "G3",
+      "carrier_id": "C4",
+      "strategy_id": "T4"
+    },
+    {
+      "configuration_id": "G3-C4-T5",
+      "goal_id": "G3",
+      "carrier_id": "C4",
+      "strategy_id": "T5"
+    },
+    {
+      "configuration_id": "G3-C4-T6",
+      "goal_id": "G3",
+      "carrier_id": "C4",
+      "strategy_id": "T6"
+    },
+    {
+      "configuration_id": "G3-C4-T7",
+      "goal_id": "G3",
+      "carrier_id": "C4",
+      "strategy_id": "T7"
+    }
+  ]
+}
