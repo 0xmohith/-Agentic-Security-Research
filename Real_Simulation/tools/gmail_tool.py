@@ -1,5 +1,7 @@
 import base64
+import html
 import os
+from urllib.parse import urlsplit
 
 from email.message import EmailMessage
 from pathlib import Path
@@ -135,11 +137,75 @@ def validate_email(recipient, subject, body):
     return recipient
 
 
+def validate_link(link_text, link_url):
+    """Validate an optional HTTP(S) link before adding it to an email."""
+
+    if link_text is None and link_url is None:
+        return
+
+    if not isinstance(link_text, str) or not link_text.strip():
+        raise ValueError("Link text must be a non-empty string.")
+
+    if not isinstance(link_url, str) or not link_url:
+        raise ValueError("Link URL must be a non-empty string.")
+
+    if any(character.isspace() or ord(character) < 32 for character in link_url):
+        raise ValueError("Link URL cannot contain whitespace or control characters.")
+
+    try:
+        parsed_url = urlsplit(link_url)
+        # Accessing .port also validates that any supplied port is numeric
+        # and within the valid range.
+        parsed_url.port
+    except ValueError as error:
+        raise ValueError("Link URL is invalid.") from error
+
+    if (
+        parsed_url.scheme.lower() not in {"http", "https"}
+        or not parsed_url.hostname
+        or parsed_url.username is not None
+        or parsed_url.password is not None
+    ):
+        raise ValueError("Link URL must be an HTTP or HTTPS URL with a hostname.")
+
+
+def build_email_message(recipient, subject, body, link_text=None, link_url=None):
+    """Build a plain-text message, or a safe multipart message with a link."""
+
+    validate_link(link_text, link_url)
+
+    message = EmailMessage()
+    message["To"] = recipient
+    message["Subject"] = subject
+
+    if link_text is None and link_url is None:
+        # Preserve the existing representation for emails without a link.
+        message.set_content(body)
+        return message
+
+    plain_body = f"{body}\n\n{link_text}: {link_url}"
+    html_body = (
+        f"{html.escape(body).replace(chr(10), '<br>')}<br><br>"
+        f'<a href="{html.escape(link_url, quote=True)}">'
+        f"{html.escape(link_text)}</a>"
+    )
+    message.set_content(plain_body)
+    message.add_alternative(html_body, subtype="html")
+    return message
+
+
 # --------------------------------------------------
 # SEND EMAIL
 # --------------------------------------------------
 
-def send_email(to=None, subject="", body="", recipient=None):
+def send_email(
+    to=None,
+    subject="",
+    body="",
+    recipient=None,
+    link_text=None,
+    link_url=None,
+):
     """
     Send an email through Gmail after explicit human approval.
 
@@ -188,11 +254,13 @@ def send_email(to=None, subject="", body="", recipient=None):
                 "recipient": recipient
             }
 
-    message = EmailMessage()
-
-    message["To"] = recipient
-    message["Subject"] = subject
-    message.set_content(body)
+    message = build_email_message(
+        recipient,
+        subject,
+        body,
+        link_text=link_text,
+        link_url=link_url,
+    )
 
     encoded_message = base64.urlsafe_b64encode(
         message.as_bytes()

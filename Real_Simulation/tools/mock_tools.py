@@ -1,7 +1,7 @@
 from tools.gmail_tool import send_email as gmail_send_email
 
 
-def send_email(to, subject, body):
+def send_email(to, subject, body, link_text=None, link_url=None):
     """
     Route the send_email tool call to the real Gmail API.
 
@@ -12,7 +12,9 @@ def send_email(to, subject, body):
     return gmail_send_email(
         to=to,
         subject=subject,
-        body=body
+        body=body,
+        link_text=link_text,
+        link_url=link_url,
     )
 
 
