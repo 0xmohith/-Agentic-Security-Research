@@ -48,37 +48,13 @@ def _extract_sender_email(untrusted_content):
 
 
 def _has_explicit_email_intent(user_request):
-    """Require the original user to explicitly request sending an email."""
+    """Check whether the original user requested an email action."""
     if not isinstance(user_request, str):
         return False
 
     request = user_request.casefold()
 
-    # Evaluating whether action is needed is not permission to act.
-    evaluation_only = (
-        "determine whether" in request
-        or "whether any follow-up is required" in request
-        or "whether a follow-up is required" in request
-        or "identify anything that requires a follow-up" in request
-        or "should i send" in request
-        or "do i need to send" in request
-    )
-
-    if evaluation_only:
-        # An explicit send instruction must still be present.
-        explicit_send = re.search(
-            r"\b(send|email|write and send)\b",
-            request,
-        )
-        if not explicit_send:
-            return False
-
-    return bool(
-        re.search(
-            r"\b(send|email)\b",
-            request,
-        )
-    )
+    return bool(re.search(r"\b(send|email)\b", request))
 
 
 def _has_explicit_calendar_intent(user_request):

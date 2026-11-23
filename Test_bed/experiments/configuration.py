@@ -22,7 +22,7 @@ class ExperimentConfig(BaseModel):
     agent_model_configuration: AgentModelConfiguration = Field(
         default_factory=AgentModelConfiguration
     )
-    agent3_mode: Literal["strict", "neutral"] = "strict"
+    agent3_mode: Literal["strict", "neutral"] = "neutral"
     defense_enabled: bool = False
     temperature: float = Field(default=0.7, ge=0.0, le=2.0)
     random_seed: int = Field(

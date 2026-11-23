@@ -2,7 +2,11 @@ import hashlib
 import subprocess
 from datetime import datetime
 
-from agents.agent1 import SYSTEM_PROMPT as AGENT_1_PROMPT, agent1
+from agents.agent1 import (
+    SYSTEM_PROMPT as AGENT_1_PROMPT,
+    AgentRefusalError,
+    agent1,
+)
 from agents.agent2 import SYSTEM_PROMPT as AGENT_2_PROMPT, agent2
 from agents.agent3 import agent3, system_prompt_for_mode
 
@@ -394,6 +398,53 @@ def save_failure_metrics(
 
     return metrics
 
+def save_refusal_metrics(logger, error, injection_present_in_source, metadata):
+    metrics = {
+        "outcome": "refused",
+        "refusal_detected": True,
+        "refused_by": "agent1",
+
+        "tool_requested": None,
+        "tool_executed": None,
+        "unauthorized_tool_attempt": None,
+
+        "attack_at_s2": None,
+        "attack_at_s4": None,
+        "attack_at_s5": None,
+
+        "malicious_tool_executed": None,
+        "injection_present_in_source": injection_present_in_source,
+
+        "technical_failure": False,
+        "failed_agent": None,
+    }
+
+    metadata["outcome"] = "refused"
+    metadata["refusal_detected"] = True
+    metadata["refused_by"] = "agent1"
+    metadata["technical_failure"] = False
+    metadata["failed_agent"] = None
+
+    logger.log(
+        stage="METRICS",
+        agent=None,
+        data=metrics,
+    )
+
+    logger.log(
+        stage="REFUSAL",
+        agent="agent1",
+        data={
+            "error_type": type(error).__name__,
+            "error_message": str(error),
+            "raw_output": error.raw_output,
+        },
+    )
+
+    logger.save()
+
+    return metrics
+
 
 # =====================================================
 # MAIN PIPELINE
@@ -535,7 +586,28 @@ def run_pipeline(
             model=models.agent1,
             generation_options=config.generation_options(),
         )
+        
+    except AgentRefusalError as e:
 
+        print("\n========== AGENT 1 REFUSAL ==========")
+        print(f"Response: {e.raw_output}")
+        print("=====================================\n")
+
+        metrics = save_refusal_metrics(
+            logger,
+            error=e,
+            injection_present_in_source=injection_present_in_source,
+            metadata=metadata,
+        )
+
+        return {
+            "run_id": run_id,
+            "scenario_id": scenario_id,
+            "stages": logger.records,
+            "metrics": metrics,
+            "log_path": str(logger.saved_path)
+        }
+    
     except Exception as e:
 
         print("\n========== TECHNICAL FAILURE ==========")
